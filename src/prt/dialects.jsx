@@ -21,7 +21,7 @@ const _PRT_DIALECTS: Array<{[PRTPlainText]: PRTDialectV2_0}> = [
 export const PRTInvalidDialectNameType = function (reference: any) {
   this.message = `Invalid dialect name type, expected string, but got: ` +
                  `${reference} (type ${typeof reference})`;
-}
+};
 PRTInvalidDialectNameType.prototype      = Object.create(PRTError.prototype);
 PRTInvalidDialectNameType.prototype.name = 'PRTInvalidDialectNameType';
 
@@ -30,7 +30,7 @@ PRTInvalidDialectNameType.prototype.name = 'PRTInvalidDialectNameType';
 export const PRTInvalidDialectVersion = function (version: PRTPlainText) {
   this.message = `Invalid dialect version specified: ` +
                  `${version.toString()} (type ${typeof version})`;
-}
+};
 PRTInvalidDialectVersion.prototype      = Object.create(PRTError.prototype);
 PRTInvalidDialectVersion.prototype.name = 'PRTInvalidDialectVersion';
 
@@ -38,7 +38,7 @@ PRTInvalidDialectVersion.prototype.name = 'PRTInvalidDialectVersion';
 /*----------------------------------------------------------------------------*/
 export const PRTAlreadyRegisteredDialect = function (dialect: PRTPlainText) {
   this.message = `Dialect has already been registered: ${dialect.toString()}`;
-}
+};
 PRTAlreadyRegisteredDialect.prototype      = Object.create(PRTError.prototype);
 PRTAlreadyRegisteredDialect.prototype.name = 'PRTAlreadyRegisteredDialect';
 
@@ -47,7 +47,7 @@ PRTAlreadyRegisteredDialect.prototype.name = 'PRTAlreadyRegisteredDialect';
 export const PRTInvalidDialectType = function (dialect: any) {
   this.message = `Invalid dialect type specified, expected instance of ` +
                  `PRTDialect, but got: ${dialect} (type ${typeof dialect})`;
-}
+};
 PRTInvalidDialectType.prototype      = Object.create(PRTError.prototype);
 PRTInvalidDialectType.prototype.name = 'PRTInvalidDialectType';
 

@@ -56,7 +56,7 @@ export const PRTInvalidAttributeKey = function (key: PRTPlainText) {
   this.name   = 'PRTInvalidAttributeKey';
   this.messge = `Invalid key for attribute, expected string other than ` +
                 `'key', but got: ${key.toString()} (type ${typeof key})`;
-}
+};
 PRTInvalidAttributeKey.prototype = Object.create(Error.prototype);
 
 
@@ -65,7 +65,7 @@ export const PRTInvalidAttributeValueType = function (value: any) {
   this.name   = 'PRTInvalidAttributeValueType';
   this.messge = `Invalid type of attribute value, expected string, ` +
                 `but got: ${value} (type ${typeof value})`;
-}
+};
 PRTInvalidAttributeValueType.prototype = Object.create(Error.prototype);
 
 

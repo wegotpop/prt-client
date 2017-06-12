@@ -17,7 +17,7 @@ import { getPRTDialectByNameAndVersion } from 'prt/dialects';
 export const PRTInvalidDocumentType = function (type: any) {
   this.message = `Invalid document type specified, expected the string ` +
                  `'PRTDocument', but got: ${type} (type ${typeof type})`;
-}
+};
 PRTInvalidDocumentType.prototype      = Object.create(PRTError.prototype);
 PRTInvalidDocumentType.prototype.name = 'PRTInvalidDocumentType';
 

@@ -15,7 +15,7 @@ import PRTMarkUpV2_0 from 'prt/v2/markup';
 export const PRTUnknownVersion = function (version: PRTPlainText) {
   this.message = `Unknown version specified: ` +
                  `${version.toString()} (type ${typeof version})`;
-}
+};
 PRTUnknownVersion.prototype      = Object.create(PRTError.prototype);
 PRTUnknownVersion.prototype.name = 'PRTUnknownVersion';
 

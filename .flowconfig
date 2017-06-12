@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+./node_modules
+
+[libs]
+
+[options]
+module.name_mapper='^prt/\(.*\)$' -> '<PROJECT_ROOT>/src/prt/\1'
+module.file_ext=.jsx

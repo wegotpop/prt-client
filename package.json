@@ -50,5 +50,8 @@
     "plugins": [
       "transform-flow-comments"
     ]
+  },
+  "jest": {
+    "modulePaths": ["src"]
   }
 }

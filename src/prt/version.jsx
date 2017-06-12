@@ -40,11 +40,11 @@ const parseVersionString: ParseVersionString = (version) => {
   let [majorStr, minorStr, other] = version.split('.');
 
   /* If version string is not propertly formatted */
-  if (!majorStr                               ||
-      !minorStr                               ||
-      other                                   ||
-      (majorInt = parseInt(majorStr)) === NaN ||
-      (minorInt = parseInt(minorStr)) === NaN) {
+  if (!majorStr                            ||
+      !minorStr                            ||
+      other                                ||
+      isNaN(majorInt = parseInt(majorStr)) ||
+      isNaN(minorInt = parseInt(minorStr))) {
     throw new PRTInvalidVersionString(version);
   }
 

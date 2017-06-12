@@ -151,7 +151,9 @@ class PRTMarkUp extends Component {
         props.key = i;
         /* Collect componentified element translated by dialect */
         componentified.push(
-          createElement(dialect.identifierToHTML(identifier), props, this.componentify(children, dialect)));
+          createElement(dialect.identifierToHTML(identifier),
+                        props,
+                        this.componentify(children, dialect)));
       }
       /* If element is not null, nor string, nor array */
       else {

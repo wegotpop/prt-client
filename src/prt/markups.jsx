@@ -9,7 +9,7 @@ import type { PRTPlainText } from 'prt/v2/types';
 /* Import PRT objects */
 import PRTError           from 'prt/error';
 import parseVersionString from 'prt/version';
-import PRTMarkUpV2_0 from 'prt/v2/markup';
+import PRTMarkUpV2_0      from 'prt/v2/markup';
 
 /*----------------------------------------------------------------------------*/
 export const PRTUnknownVersion = function (version: PRTPlainText) {

@@ -5,7 +5,7 @@
   "author": "We Got POP Ltd",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -22,6 +22,8 @@
     "flow-babel-webpack-plugin": "^1.0.1",
     "flow-bin": "^0.47.0",
     "flow-bin-loader": "^1.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",

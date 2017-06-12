@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --cache ./src"
   },
   "peerDependencies": {
     "react": "^15.5.4",
@@ -15,6 +16,8 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-flow-comments": "^6.22.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
@@ -22,7 +25,10 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-jest": "^20.0.3",
+    "eslint": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "flow-babel-webpack-plugin": "^1.0.1",
     "flow-bin": "^0.47.0",
     "flow-bin-loader": "^1.0.2",

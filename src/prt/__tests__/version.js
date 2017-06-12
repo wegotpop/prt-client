@@ -23,6 +23,9 @@ test('Invalid strings', () => {
   expect(() => parseVersionString('0.')).toThrow(PRTInvalidVersionString);
   expect(() => parseVersionString('.0')).toThrow(PRTInvalidVersionString);
   expect(() => parseVersionString('_._')).toThrow(PRTInvalidVersionString);
+  expect(() => parseVersionString('-2.0')).toThrow(PRTInvalidVersionString);
+  expect(() => parseVersionString('2.-1')).toThrow(PRTInvalidVersionString);
+  expect(() => parseVersionString('1.2.3')).toThrow(PRTInvalidVersionString);
 });
 
 
@@ -34,5 +37,5 @@ test('Invalid inputs', () => {
   expect(() => parseVersionString(true)).toThrow(PRTInvalidVersionType);
   expect(() => parseVersionString([])).toThrow(PRTInvalidVersionType);
   expect(() => parseVersionString({})).toThrow(PRTInvalidVersionType);
-  expect(() => parseVersionString(_ => null)).toThrow(PRTInvalidVersionType);
+  expect(() => parseVersionString(() => null)).toThrow(PRTInvalidVersionType);
 });

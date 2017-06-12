@@ -44,7 +44,9 @@ const parseVersionString: ParseVersionString = (version) => {
       !minorStr                            ||
       other                                ||
       isNaN(majorInt = parseInt(majorStr)) ||
-      isNaN(minorInt = parseInt(minorStr))) {
+      isNaN(minorInt = parseInt(minorStr)) ||
+      majorInt < 0                         ||
+      minorInt < 0) {
     throw new PRTInvalidVersionString(version);
   }
 

@@ -8,9 +8,19 @@ import React, { Component,
 import type { PRTPlainText, PRTDocument } from 'prt/v2/types';
 
 /* Import PRT objects */
-import PRTError                   from 'prt/error';
-import getPRTMarkUpByVersion         from 'prt/markups';
+import { isObject }                      from 'prt/utils';
+import PRTError                          from 'prt/error';
+import getPRTMarkUpByVersion             from 'prt/markups';
 import { getPRTDialectByNameAndVersion } from 'prt/dialects';
+
+
+/*----------------------------------------------------------------------------*/
+export const PRTInvalidContentType = function (document: any) {
+  this.message = `Invalid content specified, expected an Object, ` +
+                 `but got: ${document} (type ${typeof document})`;
+};
+PRTInvalidContentType.prototype      = Object.create(PRTError.prototype);
+PRTInvalidContentType.prototype.name = 'PRTInvalidContentType';
 
 
 /*----------------------------------------------------------------------------*/
@@ -32,8 +42,12 @@ class PRTComponent extends Component {
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
   render = () => {
-    const { type, version, dialect, elements } = this.props.content;
+    const content = this.props.content;
+    if (!isObject(content)) {
+        throw new PRTInvalidContentType(content);
+    }
 
+    const { type, version, dialect, elements } = content;
     if (type !== 'PRTDocument') {
         throw new PRTInvalidDocumentType(type);
     }

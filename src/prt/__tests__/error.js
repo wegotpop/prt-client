@@ -1,7 +1,10 @@
-// @flow
-import  PRTError from '../error';
+/* @flow */
 
-test('Error as message', () => {
-  const error = new PRTError();
-  expect(error.message).toBe('An error occured');
+/* Import PRT objects */
+import PRTError from 'prt/error';
+
+/*----------------------------------------------------------------------------*/
+test('Inheritance check', () => {
+  expect(PRTError.prototype instanceof Error).toBe(true);
+  expect((new PRTError()).message).toBe('An error occured');
 });

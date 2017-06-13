@@ -12,7 +12,7 @@
   "main": "lib/prt/index.js",
   "scripts": {
     "start": "webpack",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint --cache ./src",
     "build": "NODE_ENV=production babel src --out-dir lib --copy-files",
     "prebuild": "rimraf lib/*",
@@ -49,6 +49,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",
@@ -66,6 +67,11 @@
       ["module-resolver", {
         "root": ["./src"]
       }]
+    ]
+  },
+  "jest": {
+    "modulePaths": [
+      "src"
     ]
   }
 }

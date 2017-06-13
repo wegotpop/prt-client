@@ -1,5 +1,7 @@
 # dirs
 node_modules/
-demo/index.js
+coverage/
+lib/
+
+# files
 .eslintcache
-lib

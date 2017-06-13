@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": false,
   "files":[
-    "lib"
+    "lib",
+    "v2.js"
   ],
   "main": "lib/prt/index.js",
   "scripts": {

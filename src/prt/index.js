@@ -1,6 +1,8 @@
 // @flow
 /* Import components */
 import PRTComponent from 'prt/component';
+
+/* Import helpers */
 import registerPRTDialectByNameAndVersion, {
   getPRTDialectByNameAndVersion
 } from 'prt/dialects';
@@ -9,5 +11,5 @@ import registerPRTDialectByNameAndVersion, {
 export default PRTComponent;
 export {
   getPRTDialectByNameAndVersion,
-  registerPRTDialectByNameAndVersion
+  registerPRTDialectByNameAndVersion,
 };

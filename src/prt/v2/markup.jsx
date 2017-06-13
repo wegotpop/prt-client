@@ -144,14 +144,14 @@ class PRTMarkUp extends Component {
               throw new PRTInvalidAttributeKey(key);
             }
             /* Sanitise attributes by dialect */
-            [key, value] = dialect.attributeToHTML(identifier, key, value);
+            [key, value] = dialect.attributeToXml(identifier, key, value);
             props[key.toString()] = value;
           }
         }
         props.key = i;
         /* Collect componentified element translated by dialect */
         componentified.push(
-          createElement(dialect.identifierToHTML(identifier),
+          createElement(dialect.identifierToXml(identifier),
                         props,
                         this.componentify(children, dialect)));
       }

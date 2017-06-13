@@ -1,38 +1,41 @@
 /* @flow */
 
 /* Import react objects */
+/* eslint-disable no-unused-vars */
 import React from 'react';
+/* eslint-disable no-unused-vars */
 import renderer from 'react-test-renderer';
 
 /* Import PRT objects */
-import PRTDialect from 'prt/v2/dialect'
-import PRTMarkUp,
-       { PRTInvalidElementsType,
-         PRTInvalidElementType,
-         PRTInvalidIdentifierType,
-         PRTInvalidAttributesType,
-         PRTInvalidAttributeKey,
-         PRTInvalidAttributeValueType } from 'prt/v2/markup';
+import PRTDialect from 'prt/v2/dialect';
+import PRTMarkUp, {
+  PRTInvalidElementsType,
+  PRTInvalidElementType,
+  PRTInvalidIdentifierType,
+  PRTInvalidAttributesType,
+  PRTInvalidAttributeKey,
+  PRTInvalidAttributeValueType
+} from 'prt/v2/markup';
 
 
 /*----------------------------------------------------------------------------*/
 class TestDialect extends PRTDialect {
   identifierToXml = (identifier) => {
     switch (identifier) {
-      case 0:
-        return 'a';
-      case 1:
-        return 'b';
-      default:
-        return 'del';
+    case 0:
+      return 'a';
+    case 1:
+      return 'b';
+    default:
+      return 'del';
     }
   }
 }
 
 
 /*----------------------------------------------------------------------------*/
-const MARK_UP = new PRTMarkUp(),
-      DIALECT = new TestDialect();
+const MARK_UP = new PRTMarkUp();
+const DIALECT = new TestDialect();
 
 
 /*----------------------------------------------------------------------------*/
@@ -41,9 +44,9 @@ const jsonify = (component) => renderer.create(component).toJSON();
 
 /*----------------------------------------------------------------------------*/
 test('Valid invocation', () => {
-  let elements,
-      actual,
-      expected;
+  let elements;
+  let actual;
+  let expected;
 
   expect(MARK_UP.componentify(null, DIALECT)).toBe(null);
   expect(MARK_UP.componentify('hello', DIALECT)).toBe('hello');

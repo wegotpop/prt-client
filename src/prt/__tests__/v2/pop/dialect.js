@@ -1,11 +1,12 @@
 /* @flow */
 
 /* Import PRT objects */
-import PRTPOPDialect,
-       { PRTPOPInvalidIdentifier,
-         PRTPOPInvalidXMLTag,
-         PRTPOPInvalidAttribute,
-         PRTPOPInvalidXMLAttribute } from 'prt/v2/dialects/pop/dialect';
+import PRTPOPDialect, {
+  PRTPOPInvalidIdentifier,
+  PRTPOPInvalidXMLTag,
+  PRTPOPInvalidAttribute,
+  PRTPOPInvalidXMLAttribute
+} from 'prt/v2/dialects/pop/dialect';
 
 
 /*----------------------------------------------------------------------------*/

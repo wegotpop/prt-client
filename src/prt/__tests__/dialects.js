@@ -2,12 +2,13 @@
 
 /* Import PRT objects */
 import PRTDialectV2_0 from 'prt/v2/dialect';
-import registerPRTDialectByNameAndVersion,
-       { getPRTDialectByNameAndVersion,
-         PRTInvalidDialectNameType,
-         PRTInvalidDialectVersion,
-         PRTAlreadyRegisteredDialect,
-         PRTInvalidDialectType } from 'prt/dialects';
+import registerPRTDialectByNameAndVersion, {
+  getPRTDialectByNameAndVersion,
+  PRTInvalidDialectNameType,
+  PRTInvalidDialectVersion,
+  PRTAlreadyRegisteredDialect,
+  PRTInvalidDialectType
+} from 'prt/dialects';
 
 
 /*----------------------------------------------------------------------------*/

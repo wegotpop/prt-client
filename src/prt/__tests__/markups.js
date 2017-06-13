@@ -1,9 +1,10 @@
 /* @flow */
 
 /* Import PRT objects */
-import getPRTMarkUpByVersion,
-       { PRTUnknownVersion } from 'prt/markups';
-import PRTMarkUpV2_0         from 'prt/v2/markup';
+import getPRTMarkUpByVersion, {
+  PRTUnknownVersion
+} from 'prt/markups';
+import PRTMarkUpV2_0 from 'prt/v2/markup';
 
 
 /*----------------------------------------------------------------------------*/

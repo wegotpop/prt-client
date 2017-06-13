@@ -1,9 +1,10 @@
 /* @flow */
 
 /* Import PRT objects */
-import parseVersionString,
-       { PRTInvalidVersionType,
-         PRTInvalidVersionString } from 'prt/version';
+import parseVersionString, {
+  PRTInvalidVersionType,
+  PRTInvalidVersionString
+} from 'prt/version';
 
 
 /*----------------------------------------------------------------------------*/

@@ -23,10 +23,12 @@ export type PRTXmlToAttribute  = (PRTPlainText,
 
 /*----------------------------------------------------------------------------*/
 class PRTDialect {
-    identifierToXml: PRTIdentifierToXml = id => id.toString();
-    xmlToIdentifier: PRTXmlToIdentifier = tag => parseInt(tag.toString()[0]);
-    attributeToXml : PRTAttributeToXml  = (id, name, value) => [name, value];
-    xmlToAttribute : PRTXmlToAttribute  = (id, name, value) => [name, value];
+  identifierToXml: PRTIdentifierToXml = i => i ? i.toString() : '';
+  xmlToIdentifier: PRTXmlToIdentifier = t => 0xBAD;
+  attributeToXml : PRTAttributeToXml  =
+    (i, n, v) => [n ? n.toString() : '', v ? v.toString() : ''];
+  xmlToAttribute : PRTXmlToAttribute  =
+    (i, n, v) => [n ? n.toString() : '', v ? v.toString() : ''];
 }
 
 

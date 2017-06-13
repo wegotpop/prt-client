@@ -131,18 +131,18 @@ class PRTPOPDialect extends PRTDialect {
       throw new PRTPOPInvalidAttribute(this.identifierToXml(identifier), name);
     };
     /* If not generic attributes */
-    if (name !== 'id' ||
+    if (name !== 'id' &&
         name !== 'class') {
       switch (identifier) {
         /* Anchor */
         case 0x00:
-          if (name === 'href') {
+          if (name !== 'href') {
             invalid();
           }
           break;
         /* Image */
         case 0x0B:
-          if (name !== 'alt' ||
+          if (name !== 'alt' &&
               name !== 'src') {
             invalid();
           }
@@ -161,18 +161,18 @@ class PRTPOPDialect extends PRTDialect {
       throw new PRTPOPInvalidXMLAttribute(this.xmlToIdentifier(tag), name);
     };
     /* If not generic attributes */
-    if (name !== 'id' ||
+    if (name !== 'id' &&
         name !== 'class') {
-      switch (identifier) {
+      switch (tag) {
         /* Anchor */
         case 'a':
-          if (name === 'href') {
+          if (name !== 'href') {
             invalid();
           }
           break;
         /* Image */
         case 'img':
-          if (name !== 'alt' ||
+          if (name !== 'alt' &&
               name !== 'src') {
             invalid();
           }

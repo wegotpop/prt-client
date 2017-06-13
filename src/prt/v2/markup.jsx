@@ -11,8 +11,9 @@ import type { PRTPlainText,
               PRTElements } from 'prt/v2/types';
 
 /* Import PRT objects */
-import PRTError   from 'prt/error';
-import PRTDialect from 'prt/v2/dialect';
+import { isObject } from 'prt/utils';
+import PRTError     from 'prt/error';
+import PRTDialect   from 'prt/v2/dialect';
 
 
 /*----------------------------------------------------------------------------*/
@@ -36,7 +37,7 @@ PRTInvalidElementType.prototype.name = 'PRTInvalidElementType';
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidIdentifierType = function (identifier: any) {
   this.name    = 'PRTInvalidIdentifierType';
-  this.message = `Invalid identifier type, expected positive number, ` +
+  this.message = `Invalid identifier type, expected a positive number, ` +
                  `but got:  ${identifier} (type ${typeof identifier})`;
 };
 PRTInvalidIdentifierType.prototype = Object.create(Error.prototype);
@@ -123,13 +124,12 @@ class PRTMarkUp extends Component {
         const props = {};
         /* Validate the type of attributes */
         if (attributes !== null) {
-          if (!(attributes instanceof Object ||
-                typeof attributes === 'object')) {
+          if (!isObject(attributes)) {
             throw new PRTInvalidAttributesType(attributes);
           }
           /* Validate properties */
-          let key;
-          let value;
+          let key,
+              value;
           const keys = Object.keys(attributes);
           for (let j = 0; j < keys.length; j++) {
             key   = keys[j];

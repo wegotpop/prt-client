@@ -8,7 +8,7 @@ small and strict rich text serialisation protocol.
 
 - [PRTv2.0](#prtv20)
     - [Javascript](#javascript)
-        - [Dependencies](#dependencies)
+    - [Demo](#demo)
 - [Lincese](#license)
 
 
@@ -52,7 +52,7 @@ import registerPRTDialectByNameAndVersion from 'prt/dialects';
 import PRTDialect from 'prt/v2/dialect';
 
 class MyDialect extends PRTDialect {
-  identifierToHTML = identifier => {
+  identifierToXml = identifier => {
     switch (identifier) {
       case 0  : return 'MyNameSpace:X';
       case 1  : return 'MyNameSpace:Y';
@@ -66,14 +66,11 @@ class MyDialect extends PRTDialect {
 
 registerPRTDialectByNameAndVersion('my-dialect', '2.0', MyDialect);
 ```
-
-#### Dependencies
-
-- [`react`][2]
-- [`flow`][3]
-- [`eslint`][4]
-- [`babel`][5]
-
+## Demo
+Start demo app with
+```
+yarn storybook
+```
 
 ## License
 

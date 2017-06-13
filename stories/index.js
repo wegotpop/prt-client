@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import PRTComponent from 'prt/component';
+import PRTComponent from 'prt';
 
 storiesOf('PRTComponent', module)
   .add('null', () => <PRTComponent

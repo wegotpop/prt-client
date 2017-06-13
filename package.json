@@ -5,12 +5,18 @@
   "author": "We Got POP Ltd",
   "license": "MIT",
   "private": false,
+  "files":[
+    "lib",
+    "v2.js"
+  ],
+  "main": "lib/prt/index.js",
   "scripts": {
     "start": "webpack",
     "test": "jest --coverage",
     "lint": "eslint --cache ./src",
-    "lib": "NODE_ENV=production babel src --out-dir lib --copy-files",
-    "prepublish": "npm run lib",
+    "build": "NODE_ENV=production babel src --out-dir lib --copy-files",
+    "prebuild": "rimraf lib/*",
+    "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -25,6 +31,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-flow-comments": "^6.22.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
@@ -43,6 +50,7 @@
     "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
     "react-test-renderer": "^15.5.4",
+    "rimraf": "^2.6.1",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0"
@@ -55,7 +63,10 @@
       "flow"
     ],
     "plugins": [
-      "transform-flow-comments"
+      "transform-flow-comments",
+      ["module-resolver", {
+        "root": ["./src"]
+      }]
     ]
   },
   "jest": {

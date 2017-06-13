@@ -1,20 +1,9 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
-  entry: './demo/index.jsx',
-  output: {
-    path: __dirname,
-    filename: 'demo/index.js',
-  },
-  resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'demo'),
-      'node_modules',
-    ],
-    extensions: ['.js', '.jsx']
-  },
+  plugins: [
+    // your custom plugins
+  ],
   module: {
     loaders: [
       {
@@ -38,5 +27,12 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    modules: [
+      path.resolve(__dirname, '../src'),
+      'node_modules',
+    ],
+    extensions: ['.js', '.jsx']
   },
 };

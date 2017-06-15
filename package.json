@@ -70,15 +70,6 @@
     ]
   },
   "jest": {
-    "modulePaths": [
-      "src"
-    ],
-    "roots": [
-        "<rootDir>/tests/prt"
-    ],
-    "testMatch": [
-        "**/*.{js,jsx}"
-    ],
     "collectCoverage": true,
     "coverageThreshold": {
       "global": {
@@ -88,8 +79,11 @@
         "statements": 95
       }
     },
-    "collectCoverageFrom": [
-        "**/*.{js,jsx}"
+    "modulePaths": [
+      "src"
+    ],
+    "testMatch": [
+      "**/tests/**/*.js"
     ]
   }
 }

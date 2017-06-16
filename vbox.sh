@@ -5,6 +5,10 @@ npm install --no-bin-links;
 
 # Install binaries and their dependencies globally
 sudo npm install -g  rimraf                 \
+                     react                  \
+                     react-dom              \
+                     jest-cli               \
+                     @storybook/react       \
                      babel-cli              \
                      babel-eslint           \
                      eslint                 \

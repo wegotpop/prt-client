@@ -20,7 +20,9 @@ test('Valid registration', () => {
   const reference = 'test';
   const version   = '2.0';
   registerPRTDialectByNameAndVersion(reference, version, TestDialect);
-  expect(getPRTDialectByNameAndVersion(reference, version)).toBe(TestDialect);
+  expect(
+    getPRTDialectByNameAndVersion(reference, version) instanceof TestDialect)
+    .toBe(true);
 });
 
 

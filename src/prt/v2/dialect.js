@@ -1,33 +1,35 @@
 /* @flow */
 
 /* Import PRT types */
-import type { PRTIdentifier,
-              PRTPlainText } from 'prt/v2/types';
+import type {
+  PRTIdentifier,
+  PRTPlainText
+} from 'prt/v2/types';
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-export type PRTIdentifierToXml = (PRTIdentifier) => PRTPlainText;
+export type PRTIdentifierToElement = (PRTIdentifier) => PRTPlainText;
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-export type PRTXmlToIdentifier = (PRTPlainText) => PRTIdentifier;
+export type PRTTagNameToIdentifier = (PRTPlainText) => PRTIdentifier;
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-export type PRTAttributeToXml  = (PRTIdentifier,
+export type PRTAttributeToProp  = (PRTIdentifier,
                                   PRTPlainText,
                                   PRTPlainText) => Array<PRTPlainText>;
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-export type PRTXmlToAttribute  = (PRTPlainText,
+export type PRTPropToAttribute  = (PRTPlainText,
                                   PRTPlainText,
                                   PRTPlainText) => Array<PRTPlainText>;
 
 
 /*----------------------------------------------------------------------------*/
 class PRTDialect {
-  identifierToXml: PRTIdentifierToXml = i => i ? i.toString() : '';
-  xmlToIdentifier: PRTXmlToIdentifier = t => 0xBAD;
-  attributeToXml : PRTAttributeToXml  =
+  identifierToElement: PRTIdentifierToElement = i => i ? i.toString() : '';
+  tagNameToIdentifier: PRTTagNameToIdentifier = t => (t, 0xBAD);
+  attributeToProp : PRTAttributeToProp  =
     (i, n, v) => [n ? n.toString() : '', v ? v.toString() : ''];
-  xmlToAttribute : PRTXmlToAttribute  =
+  propToAttribute : PRTPropToAttribute  =
     (i, n, v) => [n ? n.toString() : '', v ? v.toString() : ''];
 }
 

@@ -48,28 +48,43 @@ it will be rendered as:
 Create custom dialect:
 
 ```js
-import registerPRTDialectByNameAndVersion from 'prt/dialects';
+import registerPRTDialectByNameAndVersion from 'prt';
 import PRTDialect from 'prt/v2/dialect';
 
-class MyDialect extends PRTDialect {
-  identifierToXml = identifier => {
+import { MyProjX,
+         MyProjY,
+         MyProjZ,
+         MyProjEmpty } from 'my-proj';
+
+class MyProjDialect extends PRTDialect {
+
+  identifierToElement = identifier => {
     switch (identifier) {
-      case 0  : return 'MyNameSpace:X';
-      case 1  : return 'MyNameSpace:Y';
-      case 3  : return 'MyNameSpace:Z';
-      default : return 'MyNameSpace:Empty';
+      case 0  : return <MyProjX />;
+      case 1  : return <MyProjY />;
+      case 3  : return <MyProjZ />;
+      default : return <MyProjEmpty />;
     }
   }
+
+  attributeToProp = (identifier, name, value) = {
+    if (identifier === 3 &&
+        name === 'contenteditable') {
+      name  = 'editability';
+      value = value === 'true' ? 'enabled' : 'disabled';
+    }
+    return [name, value];
+  };
 }
 
-// ...
-
-registerPRTDialectByNameAndVersion('my-dialect', '2.0', MyDialect);
+registerPRTDialectByNameAndVersion('my-proj', '2.0', MyProjDialect);
 ```
 ## Demo
+
 Start demo app with
-```
-yarn storybook
+
+```bash
+$ yarn storybook
 ```
 
 ## License

@@ -13,7 +13,7 @@
   "scripts": {
     "start": "webpack",
     "test": "jest",
-    "lint": "eslint --cache ./src",
+    "lint": "eslint --cache ./src && eslint --cache ./tests",
     "build": "NODE_ENV=production babel src --out-dir lib --copy-files",
     "prebuild": "rimraf lib/*",
     "prepublish": "npm run build",
@@ -83,7 +83,7 @@
       "src"
     ],
     "testMatch": [
-      "**/tests/**/*.js"
+      "**/tests/**/**/*.js"
     ]
   }
 }

@@ -1,14 +1,20 @@
 /* @flow */
 
 /* Import react objects */
-import React, { Component,
-                createElement } from 'react';
+/* eslint-disable no-unused-vars */
+import React, {
+/* eslint-disable no-unused-vars */
+  Component,
+  cloneElement
+} from 'react';
 
 /* Import PRT types */
-import type { PRTPlainText,
-              PRTAttributes,
-              PRTElement,
-              PRTElements } from 'prt/v2/types';
+import type {
+  PRTPlainText,
+  PRTAttributes,
+  PRTElement,
+  PRTElements
+} from 'prt/v2/types';
 
 /* Import PRT objects */
 import { isObject } from 'prt/utils';
@@ -18,7 +24,7 @@ import PRTDialect   from 'prt/v2/dialect';
 
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidElementsType = function (elements: any) {
-  this.message = `Invalid elements type, expected null, string or array, ` +
+  this.message = 'Invalid elements type, expected null, string or array, ' +
                  `but got: ${elements} (type ${typeof elements})`;
 };
 PRTInvalidElementsType.prototype      = Object.create(PRTError.prototype);
@@ -27,7 +33,7 @@ PRTInvalidElementsType.prototype.name = 'PRTInvalidElementsType';
 
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidElementType = function (element: any) {
-  this.message = `Invalid element type, expected null, string or array[3], ` +
+  this.message = 'Invalid element type, expected null, string or array[3], ' +
                  `but got: ${element} (type ${typeof element})`;
 };
 PRTInvalidElementType.prototype      = Object.create(PRTError.prototype);
@@ -37,7 +43,7 @@ PRTInvalidElementType.prototype.name = 'PRTInvalidElementType';
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidIdentifierType = function (identifier: any) {
   this.name    = 'PRTInvalidIdentifierType';
-  this.message = `Invalid identifier type, expected a positive number, ` +
+  this.message = 'Invalid identifier type, expected a positive number, ' +
                  `but got:  ${identifier} (type ${typeof identifier})`;
 };
 PRTInvalidIdentifierType.prototype = Object.create(Error.prototype);
@@ -46,7 +52,7 @@ PRTInvalidIdentifierType.prototype = Object.create(Error.prototype);
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidAttributesType = function (attributes: any) {
   this.name   = 'PRTInvalidAttributesType';
-  this.messge = `Invalid attributes type, expected null or {[string]: ` +
+  this.messge = 'Invalid attributes type, expected null or {[string]: ' +
                 `string}, bug got: ${attributes} (type ${typeof attributes})`;
 };
 PRTInvalidAttributesType.prototype = Object.create(Error.prototype);
@@ -55,7 +61,7 @@ PRTInvalidAttributesType.prototype = Object.create(Error.prototype);
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidAttributeKey = function (key: PRTPlainText) {
   this.name   = 'PRTInvalidAttributeKey';
-  this.messge = `Invalid key for attribute, expected string other than ` +
+  this.messge = 'Invalid key for attribute, expected string other than ' +
                 `'key', but got: ${key.toString()} (type ${typeof key})`;
 };
 PRTInvalidAttributeKey.prototype = Object.create(Error.prototype);
@@ -64,7 +70,7 @@ PRTInvalidAttributeKey.prototype = Object.create(Error.prototype);
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidAttributeValueType = function (value: any) {
   this.name   = 'PRTInvalidAttributeValueType';
-  this.messge = `Invalid type of attribute value, expected string, ` +
+  this.messge = 'Invalid type of attribute value, expected string, ' +
                 `but got: ${value} (type ${typeof value})`;
 };
 PRTInvalidAttributeValueType.prototype = Object.create(Error.prototype);
@@ -128,8 +134,8 @@ class PRTMarkUp extends Component {
             throw new PRTInvalidAttributesType(attributes);
           }
           /* Validate properties */
-          let key,
-              value;
+          let key;
+          let value;
           const keys = Object.keys(attributes);
           for (let j = 0; j < keys.length; j++) {
             key   = keys[j];
@@ -144,16 +150,17 @@ class PRTMarkUp extends Component {
               throw new PRTInvalidAttributeKey(key);
             }
             /* Sanitise attributes by dialect */
-            [key, value] = dialect.attributeToXml(identifier, key, value);
+            [key, value] = dialect.attributeToProp(identifier, key, value);
             props[key.toString()] = value;
           }
         }
         props.key = i;
         /* Collect componentified element translated by dialect */
         componentified.push(
-          createElement(dialect.identifierToXml(identifier),
-                        props,
-                        this.componentify(children, dialect)));
+          cloneElement(
+            dialect.identifierToElement(identifier),
+            props,
+            this.componentify(children, dialect)));
       }
       /* If element is not null, nor string, nor array */
       else {
@@ -164,8 +171,10 @@ class PRTMarkUp extends Component {
   };
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-  render = () => <div>{this.componentify(this.props.content,
-                                         this.props.dialect)}</div>;
+  render = () =>
+    <div>
+      {this.componentify(this.props.content, this.props.dialect)}
+    </div>;
 }
 
 

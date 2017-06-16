@@ -12,8 +12,8 @@
   "main": "lib/prt/index.js",
   "scripts": {
     "start": "webpack",
-    "test": "jest --coverage",
-    "lint": "eslint --cache ./src",
+    "test": "jest",
+    "lint": "eslint --cache ./src && eslint --cache ./tests",
     "build": "NODE_ENV=production babel src --out-dir lib --copy-files",
     "prebuild": "rimraf lib/*",
     "prepublish": "npm run build",
@@ -70,8 +70,20 @@
     ]
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 95,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
     "modulePaths": [
       "src"
+    ],
+    "testMatch": [
+      "**/tests/**/**/*.js"
     ]
   }
 }

@@ -20,14 +20,14 @@ import PRTMarkUp, {
 
 /*----------------------------------------------------------------------------*/
 class TestDialect extends PRTDialect {
-  identifierToXml = (identifier) => {
+  identifierToElement = (identifier) => {
     switch (identifier) {
     case 0:
-      return 'a';
+      return <a />;
     case 1:
-      return 'b';
+      return <b />;
     default:
-      return 'del';
+      return <del />;
     }
   }
 }

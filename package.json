@@ -1,5 +1,5 @@
 {
-  "name": "prt",
+  "name": "prt-client",
   "version": "1.0.0",
   "description": "Client side reference implementation of the PRT protocol",
   "author": "We Got POP Ltd",

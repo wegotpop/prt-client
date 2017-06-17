@@ -68,7 +68,6 @@ class PRTPOPDialect extends PRTDialect {
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
   identifierToElement: PRTIdentifierToElement = identifier => {
-    /* eslint-disable indent */
     switch (identifier) {
       /* Anchor */
       case 0x00: return <a />;
@@ -100,12 +99,10 @@ class PRTPOPDialect extends PRTDialect {
       default:
         throw new PRTPOPInvalidIdentifier(identifier);
     }
-    /* eslint-enable indent */
   };
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
   tagNameToIdentifier: PRTTagNameToIdentifier = tagName => {
-    /* eslint-disable indent */
     switch (tagName) {
       /* Anchor */
       case 'a'    : return 0x00;
@@ -137,7 +134,6 @@ class PRTPOPDialect extends PRTDialect {
       default:
         throw new PRTPOPInvalidTagName(tagName);
     }
-    /* eslint-enable indent */
   };
 
   /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -150,7 +146,6 @@ class PRTPOPDialect extends PRTDialect {
       /* If not generic attributes */
       if (attributeName !== 'id' &&
           attributeName !== 'class') {
-        /* eslint-disable indent */
         switch (identifier) {
           /* Anchor */
           case 0x00:
@@ -168,7 +163,6 @@ class PRTPOPDialect extends PRTDialect {
           default:
             invalid();
         }
-        /* eslint-enable indent */
       }
       /* Return validated name and value */
       return [attributeName, attributeValue];
@@ -184,7 +178,6 @@ class PRTPOPDialect extends PRTDialect {
       /* If not generic attributes */
       if (attributeName !== 'id' &&
           attributeName !== 'class') {
-        /* eslint-disable indent */
         switch (tagName) {
           /* Anchor */
           case 'a':
@@ -202,7 +195,6 @@ class PRTPOPDialect extends PRTDialect {
           default:
             invalid();
         }
-        /* eslint-enable indent */
       }
       /* Return validated name and value */
       return [attributeName, attributeValue];

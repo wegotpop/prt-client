@@ -5,12 +5,10 @@ import type { PRTPlainText } from 'prt/v2/types';
 
 /* Import PRT objects */
 import PRTError      from 'prt/error';
-import PRTMarkUpV2_0 from 'prt/v2/markup';
-
 
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidVersionType = function (version: any) {
-  this.message = `Invalid version type, expected string, but got: ` +
+  this.message = 'Invalid version type, expected string, but got: ' +
                  `${version} (type ${typeof version})`;
 };
 PRTInvalidVersionType.prototype      = Object.create(PRTError.prototype);
@@ -19,7 +17,7 @@ PRTInvalidVersionType.prototype.name = 'PRTInvalidVersionType';
 
 /*----------------------------------------------------------------------------*/
 export const PRTInvalidVersionString = function (version: PRTPlainText) {
-  this.message = `Invalid version string, expected <major>.<minor>, ` +
+  this.message = 'Invalid version string, expected <major>.<minor>, ' +
                  `but got: ${version.toString()} (type ${typeof version})`;
 };
 PRTInvalidVersionString.prototype      = Object.create(PRTError.prototype);

@@ -37,6 +37,7 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "flowtype/space-before-type-colon": "off",
     }
 };

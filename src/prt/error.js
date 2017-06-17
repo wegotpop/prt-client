@@ -1,7 +1,7 @@
 /* @flow */
 
 /*----------------------------------------------------------------------------*/
-const PRTError = function (_: any) {
+const PRTError = function () {
   this.message = 'An error occured';
 };
 PRTError.prototype      = Object.create(Error.prototype);

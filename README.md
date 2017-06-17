@@ -62,13 +62,13 @@ class MyProjDialect extends PRTDialect {
     switch (identifier) {
       case 0  : return <MyProjX />;
       case 1  : return <MyProjY />;
-      case 3  : return <MyProjZ />;
+      case 2  : return <MyProjZ />;
       default : return <MyProjEmpty />;
     }
   }
 
   attributeToProp = (identifier, name, value) = {
-    if (identifier === 3 &&
+    if (identifier === 2 &&
         name === 'contenteditable') {
       name  = 'editability';
       value = value === 'true' ? 'enabled' : 'disabled';

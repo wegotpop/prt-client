@@ -1,43 +1,56 @@
-module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "jest/globals": true
+module.exports =
+{
+  "env":
+  {
+    "browser": true,
+    "es6": true,
+    "jest/globals": true,
+  },
+  "extends":
+  [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:flowtype/recommended",
+  ],
+  "parserOptions":
+  {
+    "ecmaFeatures":
+    {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
     },
-    "extends": [
-      "eslint:recommended",
-      "plugin:jest/recommended",
-      "plugin:flowtype/recommended",
+    "sourceType": "module"
+  },
+  "plugins":
+  [
+    "react",
+    "jest",
+    "flowtype",
+  ],
+  "rules":
+  {
+    "indent":
+    [
+      "error",
+      2,
+      {SwitchCase: 1}
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
-    "plugins": [
-      "react",
-      "jest",
-      "flowtype",
+    "linebreak-style":
+    [
+      "error",
+      "unix"
     ],
-    "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "flowtype/space-before-type-colon": "off",
-    }
+    "quotes":
+    [
+      "error",
+      "single"
+    ],
+    "semi":
+    [
+      "error",
+      "always"
+    ],
+    "react/jsx-uses-vars": 2,
+    "flowtype/space-before-type-colon": "off",
+  }
 };

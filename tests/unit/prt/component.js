@@ -7,9 +7,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 /* Import PRT objects */
-/* eslint-disable no-unused-vars */
 import PRTComponent, {
-/* eslint-disable no-unused-vars */
   PRTInvalidContentType,
   PRTInvalidDocumentType
 } from 'prt/component';

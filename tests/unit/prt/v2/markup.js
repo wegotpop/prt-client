@@ -22,12 +22,12 @@ import PRTMarkUp, {
 class TestDialect extends PRTDialect {
   identifierToElement = (identifier) => {
     switch (identifier) {
-    case 0:
-      return <a />;
-    case 1:
-      return <b />;
-    default:
-      return <del />;
+      case 0:
+        return <a />;
+      case 1:
+        return <b />;
+      default:
+        return <del />;
     }
   }
 }

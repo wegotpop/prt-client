@@ -28,7 +28,6 @@ PRTUnknownVersion.prototype.name = 'PRTUnknownVersion';
 type GetPRTMarkUpByVersion = (PRTPlainText) => Component;
 const getPRTMarkUpByVersion: GetPRTMarkUpByVersion = (version) => {
   const [major, minor] = parseVersionString(version);
-  /* eslint-disable indent */
   switch (major) {
     case 2:
       switch(minor) {
@@ -40,7 +39,6 @@ const getPRTMarkUpByVersion: GetPRTMarkUpByVersion = (version) => {
       throw new PRTUnknownVersion(version);
     /* eslint-enable no-fallthrough */
   }
-  /* eslint-enable indent */
 };
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

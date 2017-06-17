@@ -1,8 +1,10 @@
 /* @flow */
 
 /* Import PRT types */
-import type { PRTPlainText,
-              PRTIdentifier } from 'prt/v2/types';
+import type {
+  PRTPlainText,
+  PRTIdentifier
+} from 'prt/v2/types';
 
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

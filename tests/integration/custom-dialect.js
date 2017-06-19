@@ -9,9 +9,9 @@ import React, {
 import renderer from 'react-test-renderer';
 
 /* Import PRT objects */
-import PRTComponent                       from 'prt/component';
-import registerPRTDialectByNameAndVersion from 'prt/dialects';
-import PRTDialect                         from 'prt/v2/dialect';
+import PRTComponent                           from 'prt/component';
+import { registerPRTDialectByNameAndVersion } from 'prt/dialects';
+import PRTDialect                             from 'prt/v2/dialect';
 
 
 /*----------------------------------------------------------------------------*/

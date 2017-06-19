@@ -50,6 +50,12 @@ module.exports =
       "error",
       "always"
     ],
+    "quotes":
+    [
+      "error",
+      "single",
+      {avoidEscape: true},
+    ],
     "react/jsx-uses-vars": 2,
     "flowtype/space-before-type-colon": "off",
   }

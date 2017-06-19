@@ -2,7 +2,8 @@
 
 /* Import PRT objects */
 import PRTDialectV2_0 from 'prt/v2/dialect';
-import registerPRTDialectByNameAndVersion, {
+import {
+  registerPRTDialectByNameAndVersion,
   getPRTDialectByNameAndVersion,
   PRTInvalidDialectNameType,
   PRTInvalidDialectVersion,

@@ -1,11 +1,11 @@
 {
   "name": "prt-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Client side reference implementation of the PRT protocol",
   "author": "We Got POP Ltd",
   "license": "MIT",
   "private": false,
-  "files":[
+  "files": [
     "lib",
     "v2.js"
   ],
@@ -64,9 +64,14 @@
     ],
     "plugins": [
       "transform-flow-comments",
-      ["module-resolver", {
-        "root": ["./src"]
-      }]
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ]
+        }
+      ]
     ]
   },
   "jest": {

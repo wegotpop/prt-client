@@ -1,62 +1,65 @@
 module.exports =
 {
-  "env":
+  env:
   {
-    "browser": true,
-    "es6": true,
-    "jest/globals": true,
+    browser: true,
+    es6: true,
+    'jest/globals': true,
   },
-  "extends":
+  extends:
   [
-    "eslint:recommended",
-    "plugin:jest/recommended",
-    "plugin:flowtype/recommended",
+    'eslint:recommended',
+    'plugin:jest/recommended',
+    'plugin:flowtype/recommended',
   ],
-  "parserOptions":
+  parserOptions:
   {
-    "ecmaFeatures":
+    ecmaFeatures:
     {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
+      experimentalObjectRestSpread: true,
+      jsx: true
     },
-    "sourceType": "module"
+    sourceType: 'module'
   },
-  "plugins":
+  plugins:
   [
-    "react",
-    "jest",
-    "flowtype",
+    'react',
+    'jest',
+    'flowtype',
   ],
-  "rules":
+  rules:
   {
-    "indent":
+    indent:
     [
-      "error",
+      'error',
       2,
       {SwitchCase: 1}
     ],
-    "linebreak-style":
+    'linebreak-style':
     [
-      "error",
-      "unix"
+      'error',
+      'unix'
     ],
-    "quotes":
+    semi:
     [
-      "error",
-      "single"
+      'error',
+      'always'
     ],
-    "semi":
+    quotes:
     [
-      "error",
-      "always"
-    ],
-    "quotes":
-    [
-      "error",
-      "single",
+      'error',
+      'single',
       {avoidEscape: true},
     ],
-    "react/jsx-uses-vars": 2,
-    "flowtype/space-before-type-colon": "off",
+    'no-unused-vars':
+    [
+      'error',
+      {
+        varsIgnorePattern: '\\b_\\b',
+        argsIgnorePattern: '\\b_\\b'
+      },
+    ],
+    'react/jsx-uses-vars': 2,
+    'flowtype/space-before-type-colon': 'off',
   }
 };

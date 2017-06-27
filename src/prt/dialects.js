@@ -58,7 +58,7 @@ PRTInvalidDialectType.prototype.name = 'PRTInvalidDialectType';
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 type Register = (PRTPlainText, PRTPlainText, PRTDialectV2_0) => void;
-const registerPRTDialectByNameAndVersion: Register =
+export const registerPRTDialectByNameAndVersion: Register =
 (reference, version, dialect) => {
   let dialects;
   /* If reference is not a string */
@@ -103,7 +103,3 @@ export const getPRTDialectByNameAndVersion: Getter =
   }
   return dialect;
 };
-
-
-/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-export default registerPRTDialectByNameAndVersion;

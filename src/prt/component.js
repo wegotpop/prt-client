@@ -16,7 +16,8 @@ import { isObject }          from 'prt/utils';
 import PRTError              from 'prt/error';
 import getPRTMarkUpByVersion from 'prt/markups';
 import PRTPOPDialectV2_0     from 'prt/v2/dialects/pop/dialect';
-import registerPRTDialectByNameAndVersion, {
+import {
+  registerPRTDialectByNameAndVersion,
   getPRTDialectByNameAndVersion,
 } from 'prt/dialects';
 

@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - lint: yarn run lint
+      - run: yarn run test

@@ -5,5 +5,5 @@ jobs:
       - image: node:10
     steps:
       - checkout
-      - lint: yarn run lint
+      - run: yarn run lint
       - run: yarn run test

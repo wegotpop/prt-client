@@ -43,7 +43,7 @@
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.0.1",
     "flow-babel-webpack-plugin": "^1.0.1",
-    "flow-bin": "^0.47.0",
+    "flow-bin": "^0.86.0",
     "flow-bin-loader": "^1.0.2",
     "jest": "^20.0.4",
     "react": "^15.5.4",
@@ -52,7 +52,7 @@
     "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "webpack": "^2.6.1",
-    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-middleware": "^2.0.6",
     "webpack-hot-middleware": "^2.18.0"
   },
   "babel": {

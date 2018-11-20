@@ -52,7 +52,7 @@
     "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "webpack": "^2.6.1",
-    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-middleware": "^2.0.6",
     "webpack-hot-middleware": "^2.18.0"
   },
   "babel": {
